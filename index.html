@@ -3064,37 +3064,22 @@
             
             /* Pakete Section - dunkler Hintergrund auf Mobile */
             .pakete {
-                background: linear-gradient(180deg, #0f172a 0%, #1e3a5f 50%, #0c4a6e 100%) !important;
-                color: #ffffff !important;
-                padding-bottom: 80px !important;
+                background: linear-gradient(180deg, #0f172a 0%, #1e3a5f 100%);
+                color: #ffffff;
+                padding-bottom: 60px;
             }
             .pakete .section-title {
-                color: #ffffff !important;
+                color: #ffffff;
             }
             .pakete .section-subtitle {
-                color: #f1f5f9 !important;
+                color: #cbd5e1;
             }
             
-            /* Pricing Cards - hell auf dunklem Grund */
+            /* Pricing Cards - weiße Karten */
             .pricing-card {
-                background: #ffffff !important;
-                border-color: #e2e8f0 !important;
-                padding: 20px 16px;
-                min-height: auto;
-                gap: 12px;
-            }
-            .pricing-card h3 {
-                color: #0f172a !important;
-                font-size: 1.1rem;
-            }
-            .pricing-card .price {
-                color: #0f172a !important;
-                font-size: 1.5rem;
-            }
-            .pricing-card li {
-                color: #334155 !important;
-                font-size: 0.85rem;
-                padding: 4px 0;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                color: #0f172a;
             }
             
             /* FAQ Section - dunkler Hintergrund mit weißem Titel */
@@ -3233,72 +3218,79 @@
             /* Pakete/Pricing Grid - LESBAR */
             .pricing-grid, .pakete .pricing-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 16px;
                 max-width: 100%;
             }
             .pricing-card {
-                padding: 14px;
+                padding: 24px 20px;
                 background: #ffffff;
                 color: #0f172a;
-            }
-            /* Dunkler Hintergrund für Pricing Cards */
-            .pricing-card {
-                background: linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
-                border: 1px solid rgba(71, 85, 105, 0.5);
+                border: 1px solid #e2e8f0;
+                border-radius: 16px;
             }
             .pricing-label {
-                font-size: 0.75rem;
-                color: #22d3ee;
+                font-size: 0.7rem;
+                color: #0891b2;
                 font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                background: #ecfeff;
+                padding: 6px 12px;
+                border-radius: 100px;
+                border: 1px solid #22d3ee;
             }
             .pricing-card h3 {
-                font-size: 1.2rem;
-                color: #f8fafc;
+                font-size: 1.4rem;
+                color: #0f172a;
                 font-weight: 700;
+                margin: 12px 0;
             }
             .pricing-price {
-                font-size: 1.6rem;
-                color: #22d3ee;
+                font-size: 2rem;
+                color: #0891b2;
                 font-weight: 700;
             }
             .pricing-price span {
-                font-size: 0.8rem;
-                color: #94a3b8;
+                font-size: 0.85rem;
+                color: #64748b;
+                font-weight: 400;
             }
-            /* Kurze Feature-Liste auf Mobile anzeigen */
+            /* Features - normal anzeigen */
             .pricing-features {
-                display: none;
+                display: block;
+                margin: 20px 0;
             }
             .pricing-features-preview {
-                display: block;
-                list-style: none;
-                margin: 10px 0;
-                padding: 0;
+                display: none;
             }
             .pricing-features li {
                 font-size: 0.9rem;
-                color: #cbd5e1;
-                padding: 4px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            .pricing-features li:last-child {
-                border-bottom: none;
+                color: #334155;
+                padding: 8px 0;
             }
             .pricing-features li::before {
-                content: "✓";
-                color: #22d3ee;
-                font-weight: 700;
-                margin-right: 6px;
-            }
-            .pricing-features-preview {
-                display: block;
-                color: #cbd5e1;
+                content: "";
+                display: none;
             }
             .pricing-cta {
-                margin-top: 14px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
             }
             .pricing-cta .btn {
                 width: 100%;
+                padding: 14px 20px;
+            }
+            .pricing-cta .btn-primary {
+                background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+                color: white;
+                border: none;
+            }
+            .pricing-cta .btn-outline {
+                background: transparent;
+                border: 1px solid #e2e8f0;
+                color: #64748b;
             }
             
             /* Prozess Grid - LESBAR */
