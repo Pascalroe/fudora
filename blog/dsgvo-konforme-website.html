@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was ist eine DSGVO-konforme Website? | fudora Blog</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-header { background: linear-gradient(160deg, #0f172a 0%, #1e293b 40%, #1e3a5f 70%, #0c4a6e 100%); color: white; padding: 180px 0 100px; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 40%); pointer-events: none; }
+        .article-meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px; }
+        .article-header h1 { font-size: 2.5rem; max-width: 800px; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px; }
+        .article-content { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .article-content h2 { font-size: 1.8rem; margin: 48px 0 20px; color: #1e293b; font-weight: 700; }
+        .article-content p { font-size: 1.1rem; line-height: 1.8; color: #475569; margin-bottom: 20px; }
+        .article-content ul { margin: 20px 0; padding-left: 24px; }
+        .article-content li { font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 12px; }
+        .info-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 24px; margin: 32px 0; border-radius: 0 8px 8px 0; }
+        .info-box h3 { color: #0369a1; margin-bottom: 12px; }
+        .info-box p { margin-bottom: 0; }
+        .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 24px; margin: 32px 0; border-radius: 0 8px 8px 0; }
+        .warning-box h3 { color: #b45309; margin-bottom: 12px; }
+        .warning-box p { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#22d3ee,#0ea5e9,#2563eb);z-index:1000;transition:width 0.1s;"></div>
+    <nav class="blog-nav" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;padding:16px 0;position:fixed;top:0;left:0;right:0;z-index:100;">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px;">
+            <a href="index.html" class="blog-logo" style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3rem;color:#1e293b;text-decoration:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#22d3ee"/><stop offset="50%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs><path d="M20 6L32 12V28L20 34L8 28V12L20 6Z" stroke="url(#lg)" stroke-width="1.5" fill="url(#lg)" fill-opacity="0.08"/><path d="M20 10L28 14V26L20 30L12 26V14L20 10Z" stroke="url(#lg)" stroke-width="1.5" fill="none"/><path d="M18 18H26M18 22H24M18 26H22" stroke="url(#lg)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span>fudora</span>
+            </a>
+            <a href="index.html" class="back-link" style="color:#64748b;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:8px;">← Zurück zum Blog</a>
+        </div>
+    </nav>
+    <section class="article-header">
+        <div class="container" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px;">
+            <div class="article-meta">Technik · 7 Min. Lesezeit</div>
+            <h1>Was ist eine DSGVO-konforme Website?</h1>
+        </div>
+    </section>
+    <article class="article-content">
+        <p>Die Datenschutz-Grundverordnung (DSGVO) ist seit 2018 in Kraft. Doch viele Websites entsprechen noch immer nicht den Anforderungen. Wir erklären, was eine DSGVO-konforme Website ausmacht und warum das wichtig ist.</p>
+        <h2>Warum DSGVO wichtig ist</h2>
+        <p>Die DSGVO schützt die Daten von EU-Bürgern. Bei Verstößen können hohe Bußgelder verhängt werden – bis zu 20 Millionen Euro oder 4% des weltweiten Jahresumsatzes. Aber jenseits der Strafen geht es um Vertrauen: Eine datenschutzkonforme Website signalisiert Professionalität.</p>
+        <div class="info-box"><h3>Was ist die DSGVO?</h3><p>Die Datenschutz-Grundverordnung regelt, wie Unternehmen mit personenbezogenen Daten umgehen müssen. Für Websites bedeutet das: Sie müssen transparent machen, welche Daten Sie sammeln und wie Sie sie nutzen.</p></div>
+        <h2>Pflichtbestandteile einer DSGVO-konformen Website</h2>
+        <ul>
+            <li><strong>Impressum:</strong> Pflicht für alle geschäftlichen Websites. Muss vollständige Firmenadresse, Ansprechpartner und Handelsregisterdaten enthalten.</li>
+            <li><strong>Datenschutzerklärung:</strong> Erklärt, welche Daten gesammelt werden (Cookies, Kontaktformulare, Analytics) und wie sie verarbeitet werden.</li>
+            <li><strong>Cookie-Banner:</strong> Cookies dürfen erst gesetzt werden, wenn der Nutzer zustimmt. Ausnahme: Technisch notwendige Cookies.</li>
+            <li><strong>Kontaktformulare:</strong> Müssen清晰的 Zustimmung einholen, dass Daten gespeichert und verarbeitet werden.</li>
+        </ul>
+        <h2>Was Sie vermeiden sollten</h2>
+        <div class="warning-box"><h3>Häufige Fehler</h3><p>Viele Websites binden Google Analytics ohne Zustimmung ein, verwenden Tracking-Pixel ohne Hinweis oder speichern Daten ohne Rechtsgrundlage. Diese Praxis ist riskant und kann abgemahnt werden.</p></div>
+        <h2>Was wir für Sie tun</h2>
+        <p>Bei fudora achten wir von Anfang an auf Datenschutz. Unsere Websites enthalten:</p>
+        <ul>
+            <li>Vollständiges Impressum mit allen Pflichtangaben</li>
+            <li>Datenschutzerklärung als eigene Seite</li>
+            <li>Cookie-Banner mit Einwilligung</li>
+            <li>DSGVO-konforme Kontaktformulare</li>
+        </ul>
+        <p>So sind Sie rechtlich auf der sicheren Seite – von Anfang an.</p>
+    </article>
+    <footer class="site-footer" style="background:#0f172a;color:#64748b;padding:40px 0;text-align:center;margin-top:60px;">
+        <div class="container"><p>© 2026 fudora – Website-Bau mit voller Kontrolle</p></div>
+    </footer>
+    <script>window.addEventListener('scroll',()=>{const s=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('scrollProgress').style.width=(s/h*100)+'%'});</script>
+</body>
+</html>

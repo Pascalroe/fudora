@@ -10,82 +10,291 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
-        .blog-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 80px 0 60px;
-            text-align: center;
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #22d3ee, #0ea5e9, #2563eb);
+            z-index: 1000;
+            transition: width 0.1s ease-out;
         }
-        .blog-header h1 {
-            font-size: 3rem;
-            margin-bottom: 16px;
+        
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            background: linear-gradient(160deg, #0f172a 0%, #1e293b 40%, #1e3a5f 70%, #0c4a6e 100%);
+            color: white;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             background: linear-gradient(90deg, #22d3ee, #0ea5e9, #2563eb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 800;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease;
         }
-        .blog-header p {
-            font-size: 1.2rem;
+        .blog-hero p {
+            font-size: 1.25rem;
             color: #94a3b8;
             max-width: 600px;
             margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+        
+        /* Trust Bar */
+        .blog-trust {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 24px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .blog-trust .container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .blog-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #e2e8f0;
+        }
+        .blog-trust-item .icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(34, 211, 238, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #22d3ee;
+        }
+        .blog-trust-item .num {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+        }
+        .blog-trust-item .label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 80px 0;
         }
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 32px;
-            padding: 60px 0;
         }
         .blog-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #22d3ee, #0ea5e9, #2563eb);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(34, 211, 238, 0.15);
+            border-color: #22d3ee;
+        }
+        .blog-card:hover::before {
+            opacity: 1;
         }
         .blog-card-content {
-            padding: 24px;
+            padding: 32px;
         }
         .blog-card-tag {
             display: inline-block;
-            background: #f1f5f9;
-            color: #2563eb;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #0284c7;
             font-size: 0.75rem;
             font-weight: 600;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .blog-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 14px;
             color: #1e293b;
+            font-weight: 700;
+            line-height: 1.3;
         }
         .blog-card p {
             color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
         .blog-card-link {
             color: #2563eb;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            transition: all 0.2s;
         }
         .blog-card-link:hover {
             color: #1d4ed8;
+            gap: 12px;
+        }
+
+        /* CTA Section */
+        .blog-cta {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .blog-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-cta p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        .btn-blog {
+            display: inline-block;
+            background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 100%);
+            color: #0f172a;
+            font-weight: 700;
+            padding: 16px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3);
+        }
+        .btn-blog:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            color: #64748b;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .site-footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+        .site-footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .site-footer a:hover {
+            color: #22d3ee;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Blog Nav */
+        .blog-nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        .blog-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .blog-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #1e293b;
+            text-decoration: none;
+        }
+        .back-link {
+            color: #64748b;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-link:hover {
+            color: #2563eb;
         }
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
     <nav class="blog-nav">
-        <div class="container">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
             <a href="../index.html" class="blog-logo">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -101,91 +310,136 @@
                 </svg>
                 <span>fudora</span>
             </a>
-            <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
+            <a href="../index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Zurück zur Startseite
+            </a>
         </div>
     </nav>
 
-    <section class="blog-header">
-        <div class="container">
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
             <h1>Tipps & Insights</h1>
             <p>Praktische Tipps rund um Websites, Online-Marketing und digitale Präsenz für Unternehmen.</p>
         </div>
     </section>
 
-    <div class="container">
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-card-content">
-                    <span class="blog-card-tag">Kosten</span>
-                    <h3>Was kostet eine Website 2026?</h3>
-                    <p>Die Preise für Websites variieren stark – von 500€ bis 50.000€. Wir erklären, was wirklich hinter den Kosten steckt und wie Sie das beste Preis-Leistungsverhältnis erhalten.</p>
-                    <a href="was-kostet-eine-website.html" class="blog-card-link">Weiterlesen →</a>
+    <!-- Trust Bar -->
+    <div class="blog-trust">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <div class="blog-trust-item">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
                 </div>
-            </article>
-
-            <article class="blog-card">
-                <div class="blog-card-content">
-                    <span class="blog-card-tag">Entscheidung</span>
-                    <h3>Selber machen vs. Agentur – Was lohnt sich?</h3>
-                    <p>Website-Baukästen sind günstig, aber ограничен. Eine Agentur bietet mehr. Wir zeigen Ihnen, welche Option für Ihr Unternehmen die richtige ist.</p>
-                    <a href="selber-machen-vs-agentur.html" class="blog-card-link">Weiterlesen →</a>
+                <div>
+                    <div class="num">5-10 Min.</div>
+                    <div class="label">Lesezeit</div>
                 </div>
-            </article>
-
-            <article class="blog-card">
-                <div class="blog-card-content">
-                    <span class="blog-card-tag">Strategie</span>
-                    <h3>Warum kleine Unternehmen eine Website brauchen</h3>
-                    <p>Viele kleine Unternehmen kommen noch ohne Website aus. Doch das ändert sich – wir zeigen Ihnen, warum eine Website heute unverzichtbar ist.</p>
-                    <a href="warum-website-fuer-kleine-unternehmen.html" class="blog-card-link">Weiterlesen →</a>
+            </div>
+            <div class="blog-trust-item">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
                 </div>
-            </article>
+                <div>
+                    <div class="num">Kostenlos</div>
+                    <div class="label">Kein Abo</div>
+                </div>
+            </div>
+            <div class="blog-trust-item">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+                </div>
+                <div>
+                    <div class="num">5 Artikel</div>
+                    <div class="label">Aktuell</div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Kosten</span>
+                        <h3>Was kostet eine Website 2026?</h3>
+                        <p>Die Preise für Websites variieren stark – von 500€ bis 50.000€. Wir erklären, was wirklich hinter den Kosten steckt.</p>
+                        <a href="was-kostet-eine-website.html" class="blog-card-link">Weiterlesen →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Entscheidung</span>
+                        <h3>Selber machen vs. Agentur</h3>
+                        <p>Website-Baukästen sind günstig, aber begrenzt. Eine Agentur bietet mehr. Wir zeigen Ihnen, welche Option die richtige ist.</p>
+                        <a href="selber-machen-vs-agentur.html" class="blog-card-link">Weiterlesen →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Strategie</span>
+                        <h3>Warum kleine Unternehmen eine Website brauchen</h3>
+                        <p>Viele kleine Unternehmen kommen noch ohne Website aus. Doch das ändert sich – wir zeigen Ihnen, warum sie unverzichtbar ist.</p>
+                        <a href="warum-website-fuer-kleine-unternehmen.html" class="blog-card-link">Weiterlesen →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Technik</span>
+                        <h3>Was ist eine DSGVO-konforme Website?</h3>
+                        <p>Datenschutz ist Pflicht. Wir erklären, was Ihre Website erfüllen muss und wie Sie rechtlich auf der sicheren Seite sind.</p>
+                        <a href="dsgvo-konforme-website.html" class="blog-card-link">Weiterlesen →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Marketing</span>
+                        <h3>Local SEO für lokale Unternehmen</h3>
+                        <p>Wie Sie in Ihrer Region gefunden werden – ohne teure Werbung. Die wichtigsten Tipps für lokale Suchmaschinenoptimierung.</p>
+                        <a href="local-seo-fuer-lokale-unternehmen.html" class="blog-card-link">Weiterlesen →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-cta">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 24px;">
+            <h2>Noch Fragen?</h2>
+            <p>Wir beraten Sie gerne persönlich zu Ihrer Website.</p>
+            <a href="../index.html#kontakt" class="btn-blog">Kontakt aufnehmen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <div class="footer-links">
+                <a href="../index.html">Startseite</a>
+                <a href="../index.html#pakete">Pakete</a>
+                <a href="../index.html#kontakt">Kontakt</a>
+                <a href="../index.html#faq">FAQ</a>
+            </div>
             <p>© 2026 fudora – Website-Bau mit voller Kontrolle</p>
         </div>
     </footer>
 
-    <style>
-        .blog-nav {
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .blog-nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .blog-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #1e293b;
-        }
-        .back-link {
-            color: #64748b;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .back-link:hover {
-            color: #2563eb;
-        }
-        .site-footer {
-            background: #0f172a;
-            color: #64748b;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-    </style>
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+        });
+    </script>
 </body>
 </html>
