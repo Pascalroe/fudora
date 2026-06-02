@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | fudora - Tipps rund um Websites</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .blog-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #22d3ee, #0ea5e9, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            padding: 60px 0;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .blog-card-content {
+            padding: 24px;
+        }
+        .blog-card-tag {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+        .blog-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .blog-card-link {
+            color: #2563eb;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .blog-card-link:hover {
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="blog-nav">
+        <div class="container">
+            <a href="../index.html" class="blog-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradBlog" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#22d3ee"/>
+                            <stop offset="50%" stop-color="#0ea5e9"/>
+                            <stop offset="100%" stop-color="#2563eb"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 6L32 12V28L20 34L8 28V12L20 6Z" stroke="url(#logoGradBlog)" stroke-width="1.5" fill="url(#logoGradBlog)" fill-opacity="0.08"/>
+                    <path d="M20 10L28 14V26L20 30L12 26V14L20 10Z" stroke="url(#logoGradBlog)" stroke-width="1.5" fill="none"/>
+                    <path d="M18 18H26M18 22H24M18 26H22" stroke="url(#logoGradBlog)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>fudora</span>
+            </a>
+            <a href="../index.html" class="back-link">← Zurück zur Startseite</a>
+        </div>
+    </nav>
+
+    <section class="blog-header">
+        <div class="container">
+            <h1>Tipps & Insights</h1>
+            <p>Praktische Tipps rund um Websites, Online-Marketing und digitale Präsenz für Unternehmen.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-card-tag">Kosten</span>
+                    <h3>Was kostet eine Website 2026?</h3>
+                    <p>Die Preise für Websites variieren stark – von 500€ bis 50.000€. Wir erklären, was wirklich hinter den Kosten steckt und wie Sie das beste Preis-Leistungsverhältnis erhalten.</p>
+                    <a href="was-kostet-eine-website.html" class="blog-card-link">Weiterlesen →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-card-tag">Entscheidung</span>
+                    <h3>Selber machen vs. Agentur – Was lohnt sich?</h3>
+                    <p>Website-Baukästen sind günstig, aber ограничен. Eine Agentur bietet mehr. Wir zeigen Ihnen, welche Option für Ihr Unternehmen die richtige ist.</p>
+                    <a href="selber-machen-vs-agentur.html" class="blog-card-link">Weiterlesen →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-card-tag">Strategie</span>
+                    <h3>Warum kleine Unternehmen eine Website brauchen</h3>
+                    <p>Viele kleine Unternehmen kommen noch ohne Website aus. Doch das ändert sich – wir zeigen Ihnen, warum eine Website heute unverzichtbar ist.</p>
+                    <a href="warum-website-fuer-kleine-unternehmen.html" class="blog-card-link">Weiterlesen →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 fudora – Website-Bau mit voller Kontrolle</p>
+        </div>
+    </footer>
+
+    <style>
+        .blog-nav {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .blog-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .blog-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #1e293b;
+        }
+        .back-link {
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #2563eb;
+        }
+        .site-footer {
+            background: #0f172a;
+            color: #64748b;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</body>
+</html>
